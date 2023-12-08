@@ -88,11 +88,11 @@ class Playlist
 
     public function removeFormation(Formation $formation): self
     {
-        if ($this->formations->removeElement($formation)) {
+        if (($this->formations->removeElement($formation)) && ($formation->getPlaylist() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($formation->getPlaylist() === $this) {
+             
                 $formation->setPlaylist(null);
-            }
+            
         }
 
         return $this;
@@ -100,7 +100,7 @@ class Playlist
 
 	/**
 	 * @return Collection<int, string>
-	 */	
+	 */
 	public function getCategoriesPlaylist() : Collection
 	{
 		$categories = new ArrayCollection();
