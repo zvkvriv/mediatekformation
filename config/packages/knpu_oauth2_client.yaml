@@ -6,4 +6,4 @@ knpu_oauth2_client:
             realm: 'myapplis'
             client_id: '%env(KEYCLOAK_CLIENTID)%'
             client_secret: '%env(KEYCLOAK_SECRET)%'
-            redirect_route: 'oauth_check'
+            redirect_route: 'oauth_check' 

@@ -136,7 +136,7 @@ class AdminFormationsController extends AbstractController {
 
             if(($formFormation->isSubmitted())  && ($formFormation->isValid())) {
                 $this->formationRepository->add($formation, true);
-                return $this->redirectToRoute('admin.formation');
+                return $this->redirectToRoute('admin.formations');
             }
             return $this->render("admin/formation.ajout.html.twig",[
                 'formformation' => $formFormation->createView(),
